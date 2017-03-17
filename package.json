@@ -1,0 +1,29 @@
+{
+  "name": "alelo",
+  "version": "0.0.1",
+  "description": "Uma API simples para consulta de saldo de cartão e afins.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/muniz95/alelo-api.git"
+  },
+  "author": "Rodrigo Muniz <rodrigo.temiski1995@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.15.3"
+  },
+  "bugs": {
+    "url": "https://github.com/muniz95/alelo-api/issues"
+  },
+  "homepage": "https://github.com/muniz95/alelo-api#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  }
+}
