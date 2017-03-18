@@ -2,7 +2,7 @@
   "name": "alelo",
   "version": "0.0.2",
   "description": "Uma API simples para consulta de saldo de cartão e afins.",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/muniz95/alelo-api.git"
@@ -20,12 +20,16 @@
   },
   "homepage": "https://github.com/muniz95/alelo-api#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "chai": "^3.5.0",
     "coveralls": "^2.12.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
   "scripts": {
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build",
     "test": "node_modules/.bin/mocha --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   }

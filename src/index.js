@@ -6,6 +6,6 @@
  * @param {string} locale
  * @return {string}
  */
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
+module.exports = (number, locale) => {
+  return number.toLocaleString(locale);
 };
