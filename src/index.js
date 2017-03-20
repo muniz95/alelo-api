@@ -23,7 +23,7 @@ class Alelo {
   login() {
     var opts = {
       url: `${URL}/login/authenticate`,
-      formData: {
+      json: {
         cpf: this.cpf,
         pwd: this.pwd,
         captchaResponse: ""
@@ -39,14 +39,11 @@ class Alelo {
   };
 
   obterCartoes() {
-    this.login();
+    // this.login();
     // console.log(cookieJar);
-    // axios.get(`${URL}/user/card/preference/list`, {
-    //   jar: cookieJar,
-    //   withCredentials: true
-    // })
-    // .then((response) => console.log(response))
-    // .catch((err) => console.error(`Erro: ${err}`));
+    request.get(`${URL}/user/card/preference/list`, (err, httpResponse, data) => {
+      console.log(httpResponse);
+    });
   };
 }
 
