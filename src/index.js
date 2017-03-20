@@ -1,6 +1,5 @@
 "use strict";
 
-const util = require('util');
 let request = require('request');
 const URL = "https://www.meualelo.com.br/meualelo.services/rest";
 
