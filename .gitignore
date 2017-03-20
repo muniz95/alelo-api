@@ -38,3 +38,6 @@ jspm_packages
 
 # Babel related
 dist
+
+# My configs
+example
