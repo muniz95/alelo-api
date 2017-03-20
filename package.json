@@ -16,7 +16,8 @@
     "@3846masa/axios-cookiejar-support": "0.0.3",
     "axios": "^0.15.3",
     "bluebird": "^3.5.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
   },
   "bugs": {
     "url": "https://github.com/muniz95/alelo-api/issues"
