@@ -53,13 +53,19 @@ class Alelo {
    */
   getBalance(cardId) {
     const opts = {
-      url: `${URL}/user/card/balance?selectedCardNumberId=${cardId}`
+      url: `${URL}/user/card/balance`,
+      qs: { selectedCardNumberId: cardId }
     };
     return request.get(opts)
       .then(response => JSON.parse(response))
       .catch((err) => console.error(err));
   };
 
+  /**
+   * Gets all cards of the user
+   *
+   * @return {Promise<Object>}
+   */
   getCards() {
     const opts = {
       url: `${URL}/user/card/preference/list`,
