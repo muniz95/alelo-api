@@ -2,6 +2,7 @@
 
 let request = require('request-promise');
 const util = require('util');
+const debug = require('debug')('request-promise');
 const URL = "https://www.meualelo.com.br/meualelo.services/rest";
 
 request = request.defaults({jar: true});
@@ -41,7 +42,7 @@ class Alelo {
     };
     return request.post(opts)
       .catch((err) => {
-        // console.error(`Erro: ${err}`);
+        debug(err);
         return err.error
       });
   };
@@ -60,7 +61,10 @@ class Alelo {
     };
     return request.get(opts)
       .then(response => JSON.parse(response))
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        debug(err);
+        return err.error;
+      });
   };
 
   /**
@@ -75,7 +79,10 @@ class Alelo {
     };
     return request.get(opts)
       .then(response => JSON.parse(response))
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        debug(err);
+        return err.error;
+      });
   };
 
   /**
@@ -93,8 +100,11 @@ class Alelo {
       qs: params
     }
     return request.get(opts)
-      // .then(response => console.log(response))
-      .catch(err => console.error(err));
+      .then(response => JSON.parse(response))
+      .catch(err => {
+        debug(err);
+        return err.error;
+      });
   }
 }
 
