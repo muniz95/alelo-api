@@ -9,12 +9,7 @@
   },
   "author": "Rodrigo Muniz <rodrigo.temiski1995@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "node": ">=7.2.1"
-  },
   "dependencies": {
-    "@3846masa/axios-cookiejar-support": "0.0.3",
-    "axios": "^0.15.3",
     "bluebird": "^3.5.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.0"
@@ -36,7 +31,7 @@
   "scripts": {
     "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build",
-    "test": "node_modules/.bin/mocha --reporter spec",
+    "test": "node_modules/.bin/mocha --timeout 15000 --reporter spec",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   }
 }

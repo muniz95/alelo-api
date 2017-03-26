@@ -1,6 +1,7 @@
 "use strict";
 
 let request = require('request-promise');
+const util = require('util');
 const URL = "https://www.meualelo.com.br/meualelo.services/rest";
 
 request = request.defaults({jar: true});
@@ -40,7 +41,8 @@ class Alelo {
     };
     return request.post(opts)
       .catch((err) => {
-        if(err) console.error(`Erro: ${err}`);
+        // console.error(`Erro: ${err}`);
+        return err.error
       });
   };
 
